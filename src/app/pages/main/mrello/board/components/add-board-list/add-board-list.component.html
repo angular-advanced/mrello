@@ -1,0 +1,206 @@
+<div class="flex w-72 max-w-72">
+  <button
+    type="button"
+    class="btn-ghost btn-active btn-block btn-square btn h-10 min-h-10 justify-start gap-2 px-3 font-normal capitalize text-white"
+    (click)="toggleFormVisibility()"
+    *ngIf="!formVisible"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="h-5 w-5"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+    {{ isBoardHasList ? 'Add another list' : 'Add a list' }}
+  </button>
+
+  <div class="w-full rounded-md bg-gray-200 p-2" *ngIf="formVisible">
+    <!-- <input
+      type="text"
+      id="new_board_list"
+      class="block w-full overflow-hidden whitespace-nowrap rounded-md bg-white py-1.5 px-2 text-sm font-semibold leading-5 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      [ngClass]="{ '!bg-gray-50': formVisible }"
+      placeholder="New list title"
+      [autocomplete]="'off'"
+      [formControl]="formTitle"
+      (focus)="toggleFormVisibility(true, true)"
+      (keydown)="save($event)"
+      #titleInput
+      autofocus
+    />-->
+    <input
+      type="text"
+      id="new_board_list"
+      class="input-bordered input-primary input input-sm w-full"
+      placeholder="New list title"
+      [autocomplete]="'off'"
+      [formControl]="formTitle"
+      (focus)="toggleFormVisibility(true, true)"
+      (keydown)="save($event)"
+      #titleInput
+      autofocus
+    />
+    <!-- (blur)="toggleFormVisibility()" -->
+
+    <div class="mt-2 flex w-full gap-2">
+      <button type="button" class="btn-primary btn-sm btn rounded-md" (click)="submit()">Add list</button>
+      <button type="button" class="btn-ghost btn-sm btn-circle btn" (click)="toggleFormVisibility()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-5 w-5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="w-72 px-2">
+  <form [formGroup]="form" class="w-full" (ngSubmit)="save()">
+    <input
+      type="text"
+      id="new_board_list"
+      class="input-bordered input w-full max-w-xs"
+      placeholder="New list title"
+      [autocomplete]="'off'"
+      [formControlName]="'title'"
+      (keydown.enter)="save()"
+      #titleInput
+    />
+  </form>
+</div> -->
+<!-- <div class="w-72 px-2">
+  <div
+    class="relative flex h-full w-full overflow-hidden rounded-lg border border-gray-300 bg-gray-100 dark:bg-gray-700"
+  >
+    <button
+      type="button"
+      class="inline-flex w-full items-center rounded-lg border border-gray-200 bg-transparent px-4 py-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      [class.hidden]="formVisible"
+      (click)="toggleFormVisibility()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="mr-2 -ml-1 h-5 w-5"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+
+      {{ isBoardHasList ? 'Add another list' : 'Add a list' }}
+    </button>
+
+    <form [formGroup]="form" class="w-full p-2" (ngSubmit)="save()" [class.hidden]="!formVisible">
+      <div class="mb-2 grid gap-6 md:grid-cols-1">
+        <div>
+          <input
+            type="text"
+            id="new_board_list"
+            class="dark:placeholder-gray-400 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-blue-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-blue-600 dark:focus:ring-blue-600"
+            placeholder="New list title"
+            [autocomplete]="'off'"
+            [formControlName]="'title'"
+            (keydown.enter)="save()"
+            #titleInput
+          />
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <button mat-icon-button class="min-h-8 h-8 w-8 p-0" (click)="toggleFormVisibility()">
+          <mat-icon svgIcon="heroicon_outline:x-mark" class="mat-icon-size-5"></mat-icon>
+        </button>
+        <button type="submit" mat-flat-button color="primary">Add</button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<!-- <div class="w-72 px-2">
+  <div
+    class="relative flex h-full w-full overflow-hidden rounded-lg border border-gray-300 bg-gray-100 dark:bg-gray-700"
+  >
+    <button
+      type="button"
+      class="inline-flex w-full items-center rounded-lg border border-gray-200 bg-transparent px-5 py-5 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      [class.hidden]="formVisible"
+      (click)="toggleFormVisibility()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="mr-2 -ml-1 h-5 w-5"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+
+      {{ isBoardHasList ? 'Add another list' : 'Add a list' }}
+    </button>
+
+    <form [formGroup]="form" class="w-full p-2" (ngSubmit)="save()" [class.hidden]="!formVisible">
+      <div class="mb-2 grid gap-6 md:grid-cols-1">
+        <div>
+          <input
+            type="text"
+            id="new_board_list"
+            class="dark:placeholder-gray-400 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-blue-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-blue-600 dark:focus:ring-blue-600"
+            placeholder="New list title"
+            [autocomplete]="'off'"
+            [formControlName]="'title'"
+            (keydown.enter)="save()"
+            #titleInput
+          />
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <button mat-icon-button class="min-h-8 h-8 w-8 p-0" (click)="toggleFormVisibility()">
+          <mat-icon svgIcon="heroicon_outline:x-mark" class="mat-icon-size-5"></mat-icon>
+        </button>
+        <button type="submit" mat-flat-button color="primary">Add</button>
+      </div>
+    </form>
+  </div>
+</div> -->
+<!-- <div class="mt-11 w-64 py-2.5 px-2" [class.h-15]="!formVisible">
+  <div class="relative flex h-full w-full overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700">
+    <button
+      class="w-full justify-start rounded-xl bg-transparent px-3"
+      [ngClass]="{ 'pointer-events-none opacity-0': formVisible }"
+      mat-button
+      (click)="toggleFormVisibility()"
+    >
+      <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+      <span class="text-secondary ml-2">{{ buttonTitle }}</span>
+    </button>
+    <form class="flex w-full flex-col items-start p-3" [formGroup]="form" *ngIf="formVisible">
+      <input
+        class="focus:border-primary dark:focus:border-primary w-full rounded-md border border-gray-300 bg-white py-2 px-3 leading-5 shadow-sm dark:border-gray-500 dark:bg-black dark:bg-opacity-5"
+        [autocomplete]="'off'"
+        [formControlName]="'title'"
+        [placeholder]="'Enter list title...'"
+        (keydown.enter)="save()"
+        #titleInput
+      />
+      <div class="mt-2 flex items-center">
+        <button class="min-h-8 h-8" [type]="'button'" (click)="save()">Add list</button>
+        <button class="min-h-8 ml-1 h-8 w-8" mat-icon-button [type]="'button'" (click)="toggleFormVisibility()">
+          <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div> -->

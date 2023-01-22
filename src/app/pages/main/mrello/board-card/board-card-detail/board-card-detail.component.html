@@ -1,0 +1,94 @@
+<!-- <div class="md:w-160 md:min-w-160 max-h-160 -m-6 flex flex-auto flex-col overflow-y-auto">
+
+  <div class="flex-0 text-on-primary bg-primary flex h-16 items-center justify-between pr-3 pl-6 sm:pr-5 sm:pl-8">
+    <div class="text-lg font-medium">Card</div>
+    <button mat-icon-button (click)="matDialogRef.close()" [tabIndex]="-1">
+      <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+    </button>
+  </div>
+
+  <form class="flex-0 flex w-full flex-col items-start space-y-6 overflow-y-auto p-6 sm:p-8" [formGroup]="cardForm">
+
+    <mat-form-field class="fuse-mat-textarea fuse-mat-no-subscript w-full">
+      <mat-label>Title</mat-label>
+      <textarea matInput [formControlName]="'title'" [rows]="1" cdkTextareaAutosize [cdkAutosizeMinRows]="1">
+      </textarea>
+    </mat-form-field>
+
+    <mat-form-field class="fuse-mat-textarea fuse-mat-no-subscript w-full">
+      <mat-label>Description</mat-label>
+      <textarea matInput [formControlName]="'description'" [rows]="1" cdkTextareaAutosize [cdkAutosizeMinRows]="1">
+      </textarea>
+    </mat-form-field>
+  </form>
+</div> -->
+
+<!-- <div class="flex-0 m-0 flex items-center justify-between pb-3">
+  <div class="ml-2 text-lg font-semibold md:text-2xl">Card</div>
+  <button mat-icon-button>
+    <mat-icon class="text-current" [svgIcon]="'heroicon_outline:x-mark'"></mat-icon>
+  </button>
+</div>
+
+<div class="relative">
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+  <p>Hello</p>
+</div>
+<div class="border-t">
+  <div class="flex flex-auto flex-col">
+    <div class="flex flex-col justify-between">
+      <div class="flex items-center">
+        <button class="ml-auto" mat-stroked-button [color]="'primary'">Cancel</button>
+
+        <button mat-flat-button [color]="'primary'">Update</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="relative h-full w-full sm:max-w-192 md:h-auto">
+  <!-- Modal content -->
+  <div class="relative rounded-lg bg-white shadow dark:bg-gray-700">
+    <!-- Modal header -->
+    <div class="flex items-start justify-between rounded-t p-4 dark:border-gray-600">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ (card$ | async)?.title }}</h3>
+      <button
+        type="button"
+        class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+        (click)="close()"
+      >
+        <svg
+          aria-hidden="true"
+          class="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <!-- Modal body -->
+    <div class="space-y-6 p-6">
+      <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
+        companies around the world are updating their terms of service agreements to comply.
+      </p>
+      <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
+        companies around the world are updating their terms of service agreements to comply.
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+/* eslint-disable max-len */
+import * as moment from 'moment';
+import { IBoard } from 'src/app/interfaces/Board';
+
+export const boardsList: IBoard[] = [
+  {
+    id: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+    title: 'Welcome Board',
+    description: 'Welcome Board Description',
+    lists: [
+      {
+        id: 'c9c2d1b6-4c2f-4555-9eac-60fe6d77df26',
+        boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+        position: 1,
+        title: 'To Do',
+        cards: [
+          {
+            id: '743749ef-4b56-42f7-9bb0-95b21a4ad3fb',
+            boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+            listId: 'c9c2d1b6-4c2f-4555-9eac-60fe6d77df26',
+            position: 1,
+            title: 'UI fix',
+            description: null,
+            due: moment().toISOString(),
+            createdAt: moment().toISOString(),
+            updatedAt: moment().toISOString(),
+          },
+          {
+            id: '750e5ba2-15fd-4962-8a0f-7b1a4eda5e6a',
+            boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+            listId: 'c9c2d1b6-4c2f-4555-9eac-60fe6d77df26',
+            position: 2,
+            title: 'Fix submit button',
+            description: null,
+            due: moment().toISOString(),
+            createdAt: moment().toISOString(),
+            updatedAt: moment().toISOString(),
+          },
+          {
+            id: 'cf8883b6-2d2c-4f08-aa8a-71e6a411e4e8',
+            boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+            listId: 'c9c2d1b6-4c2f-4555-9eac-60fe6d77df26',
+            position: 3,
+            title: 'New users page',
+            description: null,
+            due: moment().toISOString(),
+            createdAt: moment().toISOString(),
+            updatedAt: moment().toISOString(),
+          },
+        ],
+        createdAt: moment().toISOString(),
+        updatedAt: moment().toISOString(),
+      },
+      {
+        id: '10ac254b-1146-46d2-8a6e-1798579b4f46',
+        boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+        position: 2,
+        title: 'In progress',
+        cards: [
+          {
+            id: '0e009ddc-6c09-47b0-8433-369e4d59096f',
+            boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+            listId: '10ac254b-1146-46d2-8a6e-1798579b4f46',
+            position: 1,
+            title: 'News section',
+            description: null,
+            due: moment().toISOString(),
+            createdAt: moment().toISOString(),
+            updatedAt: moment().toISOString(),
+          },
+        ],
+        createdAt: moment().toISOString(),
+        updatedAt: moment().toISOString(),
+      },
+      {
+        id: '6060bbad-6e3b-4ba5-838f-86f4aa40ec6d',
+        boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+        position: 4,
+        title: 'Done',
+        cards: [
+          {
+            id: 'fec7f32b-e3c4-4451-b793-120598f5f228',
+            boardId: '1cb4fedd-4079-4882-acec-c4cd845d1621',
+            listId: '6060bbad-6e3b-4ba5-838f-86f4aa40ec6d',
+            position: 1,
+            title: 'Refactor code',
+            description: null,
+            due: moment().toISOString(),
+            createdAt: moment().toISOString(),
+            updatedAt: moment().toISOString(),
+          },
+        ],
+        createdAt: moment().toISOString(),
+        updatedAt: moment().toISOString(),
+      },
+    ],
+    createdAt: moment().toISOString(),
+    updatedAt: moment().toISOString(),
+  },
+];

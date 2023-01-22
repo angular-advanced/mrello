@@ -1,0 +1,13 @@
+<form [formGroup]="form" class="w-full" (ngSubmit)="onSubmit()">
+  <textarea
+    id="new_board_list_card"
+    class="textarea-bordered textarea w-full p-3 text-base font-medium leading-5"
+    [spellcheck]="'off'"
+    [formControlName]="'title'"
+    [placeholder]="'New card title...'"
+    (keydown.enter)="onSubmit()"
+    cdkTextareaAutosize
+    #textarea
+    #textareaAutosize="cdkTextareaAutosize"
+  ></textarea>
+</form>

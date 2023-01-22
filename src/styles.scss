@@ -1,0 +1,6 @@
+@use '@angular/cdk';
+
+@import './styles/tailwindcss.scss';
+@import '@angular/cdk/overlay-prebuilt.css';
+
+@include cdk.text-field-autofill();
